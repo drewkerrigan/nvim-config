@@ -4,7 +4,7 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			vim.lsp.config("elixirls", {
-				cmd = { "/Users/drewkerrigan/elixir-ls-v0.31.1/language_server.sh" },
+				cmd = { "elixir-ls" },
 				capabilities = capabilities,
 			})
 		end,

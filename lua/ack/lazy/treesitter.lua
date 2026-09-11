@@ -12,6 +12,8 @@ return {
 				"json",
 				"gitignore",
                 "elixir",
+                "eex",
+                "heex",
 			}
 
 			local group = vim.api.nvim_create_augroup("ACKTreesitter", { clear = true })
