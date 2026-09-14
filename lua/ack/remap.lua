@@ -1,5 +1,18 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- This is useful for NetRW, but we're using nvimtree.
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
+
+-- Splits shortcuts
+vim.keymap.set("n", "<leader>dd", vim.cmd.vsplit)
+-- CTRL-W w
+vim.keymap.set("n", "<leader>dn", "<C-w>w")
+
+-- Buffer shortcuts
+vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
+vim.keymap.set("n", "<leader>bb", vim.cmd.bprev)
 
 -- Note: I have no idea what most of these do yet, so I'll leave them commented until I do!
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
