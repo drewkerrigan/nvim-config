@@ -2,17 +2,35 @@ vim.g.mapleader = " "
 
 -- This is useful for NetRW, but we're using nvimtree.
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
 
--- Splits shortcuts
+-- Splits, windows, and tabs shortcuts
 vim.keymap.set("n", "<leader>dd", vim.cmd.vsplit)
--- CTRL-W w
+-- Next windown
 vim.keymap.set("n", "<leader>dn", "<C-w>w")
-
--- Buffer shortcuts
+-- Previous window
+vim.keymap.set("n", "<leader>db", "<C-w>h")
+-- New tab, current file
+vim.keymap.set("n", "<leader>tt", function() vim.cmd("tab split") end)
+-- Open file under cursor in new tab
+vim.keymap.set("n", "<leader>tf", "<C-w>gf")
+-- Next tab
+vim.keymap.set("n", "<leader>tn", vim.cmd.tabn)
+-- Previous tab
+vim.keymap.set("n", "<leader>tb", vim.cmd.tabp)
+-- Next buffer
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
+-- Previous buffer
 vim.keymap.set("n", "<leader>bb", vim.cmd.bprev)
+
+-- Delete selected text, and paste yanked text
+vim.keymap.set("x", "<leader>p", [["_dP]])
+-- Yank into system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+-- Yank from cursor to end of line into system clipboard
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- Delete into black hole
+vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
 -- Note: I have no idea what most of these do yet, so I'll leave them commented until I do!
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -38,15 +56,6 @@ vim.keymap.set("n", "<leader>bb", vim.cmd.bprev)
 --     vim.cmd [[ PlenaryBustedFile % ]]
 -- end)
 
--- -- greatest remap ever
--- vim.keymap.set("x", "<leader>p", [["_dP]])
--- 
--- -- next greatest remap ever : asbjornHaland
--- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
--- vim.keymap.set("n", "<leader>Y", [["+Y]])
--- 
--- vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
--- 
 -- -- This is going to get me cancelled
 -- -- vim.keymap.set("i", "<C-c>", "<Esc>")
 -- 
