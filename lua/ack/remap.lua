@@ -12,8 +12,6 @@ vim.keymap.set("n", "<leader>dn", "<C-w>w")
 vim.keymap.set("n", "<leader>db", "<C-w>h")
 -- New tab, current file
 vim.keymap.set("n", "<leader>tt", function() vim.cmd("tab split") end)
--- Open file under cursor in new tab
-vim.keymap.set("n", "<leader>tf", "<C-w>gf")
 -- Next tab
 vim.keymap.set("n", "<leader>tn", vim.cmd.tabn)
 -- Previous tab
