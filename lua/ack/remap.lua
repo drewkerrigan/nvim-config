@@ -32,6 +32,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- Delete into black hole
 vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 
+-- Copy filename to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>ff", [["%p_v$h"+y_d$]])
+
 -- Note: I have no idea what most of these do yet, so I'll leave them commented until I do!
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
