@@ -35,6 +35,14 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 -- Copy filename to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>ff", [["%p_v$h"+y_d$]])
 
+-- Git blame
+vim.keymap.set("n", "<leader>gg", function() vim.cmd("Git blame") end)
+vim.keymap.set("n", "<leader>go", function()
+    vim.api.nvim_feedkeys('viw', 'n', true)
+    vim.api.nvim_feedkeys([["+y]], 'v', true)
+    vim.api.nvim_feedkeys(':! open https://google.com/', 'n', true)
+end, {noremap = true})
+
 -- Note: I have no idea what most of these do yet, so I'll leave them commented until I do!
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
